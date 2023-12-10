@@ -296,3 +296,13 @@ jobs:
       with:
         name: boot${{ env.UPLOADNAME }}-${{ env.DEVICE }}-${{ env.BUILD_TIME }}
         path: kernel_workspace/boot.img
+
+    - name: Release
+      uses: svenstaro/upload-release-action@master
+      with:
+          repo_token: ${{ secrets.GITHUBTOKEN }}
+          tag: AbzRaider-Kernel
+          file: ./AnyKernel3* ./Image.gz-dtb* ./boot-KernelSU*
+          file_glob: true
+          overwrite: true
+          body: "update AbzRaider-Kernel"
