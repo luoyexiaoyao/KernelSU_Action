@@ -302,7 +302,7 @@ jobs:
       with:
           repo_token: ${{ secrets.GITHUBTOKEN }}
           tag: AbzRaider-Kernel
-          file: ./AnyKernel3* ./Image.gz-dtb* ./boot-KernelSU*
+          file: ./kernel_workspace/AnyKernel3* ./kernel_workspace/Image.gz-dtb* ./kernel_workspace/boot-KernelSU*
           file_glob: true
           overwrite: true
           body: "update AbzRaider-Kernel"
